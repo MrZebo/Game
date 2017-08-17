@@ -4,6 +4,7 @@ package org.mrzebo.game.levels;
 
 import org.mrzebo.game.DIRECTION;
 import org.mrzebo.game.Game;
+import org.mrzebo.game.entities.Eagle;
 import org.mrzebo.game.entities.units.Enemy;
 import org.mrzebo.game.entities.Entity;
 import org.mrzebo.game.entities.units.Player;
@@ -19,10 +20,15 @@ public abstract class Level {
     private Canvas canvas = new Canvas();
     protected int enemyCount;
     protected Enemy[] enemies;
+    protected Eagle eagle;
     protected Game game;
 
     public void tick() {
 
+    }
+
+    public Eagle getEagle() {
+        return eagle;
     }
 
     public int getEnemyCount() {
@@ -38,9 +44,11 @@ public abstract class Level {
         switch (direction) {
             case UP:
                 unit.setDirection(DIRECTION.UP);
+                if (unit.getY() - unit.getGame().move(unit) <= -5) {
+                    return false;
+                }
                 for (Entity entity : entities) {
                     int variable = entity.getLife() < 2 ? 5 : 10;
-                    if (unit.getY() <= 0) return false;
                     if (unit.getY() == entity.getY() + variable + move && unit.getX() == entity.getX() + move * 2) {
                         return false;
                     }
@@ -64,9 +72,11 @@ public abstract class Level {
                 break;
             case DOWN:
                 unit.setDirection(DIRECTION.DOWN);
+                if (unit.getY() + unit.getGame().move(unit) >= 590) {
+                    return false;
+                }
                 for (Entity entity : entities) {
                     int variable = entity.getLife() < 2 ? 5 : 10;
-                    if (unit.getY() >= 585) return false;
                     if (unit.getY() == entity.getY() - variable - move && unit.getX() == entity.getX() + move * 2) {
                         return false;
                     }
@@ -90,6 +100,9 @@ public abstract class Level {
                 break;
             case LEFT:
                 unit.setDirection(DIRECTION.LEFT);
+                if (unit.getX() - unit.getGame().move(unit) <= -5) {
+                    return false;
+                }
                 for (Entity entity : entities) {
                     int variable = entity.getLife() < 2 ? 5 : 10;
                     if (unit.getX() <= 0) return false;
@@ -114,9 +127,11 @@ public abstract class Level {
                 break;
             case RIGHT:
                 unit.setDirection(DIRECTION.RIGHT);
+                if (unit.getX() + unit.getGame().move(unit) >= 590) {
+                    return false;
+                }
                 for (Entity entity : entities) {
                     int variable = entity.getLife() < 2 ? 5 : 10;
-                    if (unit.getX() >= 585) return false;
                     if (unit.getX() == entity.getX() - variable - move && unit.getY() == entity.getY() - move * 2) {
                         return false;
                     }

@@ -11,7 +11,7 @@ public abstract class Entity {
     protected Image image;
     protected boolean isNotShot;
     protected DIRECTION direction;
-    private int life = 2;
+    protected int life = 2;
 
     public Entity(Image image, int x, int y, int width, int height) {
         this.image = image;

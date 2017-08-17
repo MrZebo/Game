@@ -8,6 +8,7 @@ import java.awt.*;
 public class Eagle extends Entity {
     public Eagle(Image image, int x, int y, int width, int height) {
         super(image, x, y, width, height);
+        life = 1;
     }
 
     @Override

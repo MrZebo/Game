@@ -2,8 +2,6 @@ package org.mrzebo.game.entities;
 
 import org.mrzebo.game.DIRECTION;
 import org.mrzebo.game.entities.units.AbstractUnit;
-import org.mrzebo.game.entities.units.Enemy;
-import org.mrzebo.game.entities.units.Player;
 import org.mrzebo.game.gfx.Assets;
 
 import java.awt.*;
@@ -29,6 +27,7 @@ public class Bullet extends Entity {
     public void isShot(int x, int y) {
         for (Entity entity : unit.getGame().getLevel().getEntities()) {
             if (entity.getX() == x && entity.getY() == y || (entity.getX() - 5 == x && entity.getY() - 5 == y || entity.getX() + 5 == x && entity.getY() + 5 == y)) {
+                System.out.println("bullet is shoot");
                 switch (unit.direction) {
                     case UP:
                         entity.setDirection(DIRECTION.UP);
@@ -48,16 +47,20 @@ public class Bullet extends Entity {
             }
 
         }
-        if (unit instanceof Player) {
-//            if (unit.getGame().getLevel().getEnemy().getX() == x && unit.getGame().getLevel().getEnemy().getY() == y) {
-//                unit.getGame().getLevel().getEnemy().setNotShot(false);
+//        if(unit instanceof Enemy){
+//            if(unit.getGame().getLevel().getEagle().getX() == x && unit.getGame().getLevel().getEagle().getY() == y){
+////                System.out.println("eagle die");
+////                unit.getGame().getLevel().getEagle().lifeCount();
+////                System.out.println(unit.getGame().getLevel().getEagle().getLife());
 //            }
-            for (Enemy enemy : unit.getGame().getLevel().getEnemies()) {
-                if(enemy.getX() == x && enemy.getY() == y){
-                    enemy.setNotShot(false);
-                }
-            }
-        }
+//        }
+//        if (unit instanceof Player) {
+//            for (Enemy enemy : unit.getGame().getLevel().getEnemies()) {
+//                if(enemy.getX() == x && enemy.getY() == y){
+//                    enemy.setNotShot(false);
+//                }
+//            }
+//        }
 
     }
 
@@ -69,7 +72,7 @@ public class Bullet extends Entity {
 
 
     private void move() {
-        int move = unit.getGame().move(unit);
+        int move = 5;
         if (drawable) {
             int height = unit.getGame().getDisplay().getHeight();
             int width = unit.getGame().getDisplay().getWidth();

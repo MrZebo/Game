@@ -23,25 +23,25 @@ public class KeyManager implements KeyListener {
         int key = e.getKeyCode();
         switch (key) {
             case (KeyEvent.VK_UP):
-                if ( game.getLevel().movable(game.getPlayer(),DIRECTION.UP)) {
+                if (game.getLevel().movable(game.getPlayer(), DIRECTION.UP)) {
                     game.getPlayer().setyMove(-5);
                     game.getPlayer().setDirection(DIRECTION.UP);
                 }
                 break;
             case (KeyEvent.VK_DOWN):
-                if ( game.getLevel().movable(game.getPlayer(),DIRECTION.DOWN)) {
+                if (game.getLevel().movable(game.getPlayer(), DIRECTION.DOWN)) {
                     game.getPlayer().setyMove(5);
                     game.getPlayer().setDirection(DIRECTION.DOWN);
                 }
                 break;
             case (KeyEvent.VK_LEFT):
-                if ( game.getLevel().movable(game.getPlayer(),DIRECTION.LEFT)) {
+                if (game.getLevel().movable(game.getPlayer(), DIRECTION.LEFT)) {
                     game.getPlayer().setxMove(-5);
                     game.getPlayer().setDirection(DIRECTION.LEFT);
                 }
                 break;
             case (KeyEvent.VK_RIGHT):
-                if ( game.getLevel().movable(game.getPlayer(),DIRECTION.RIGHT)) {
+                if (game.getLevel().movable(game.getPlayer(), DIRECTION.RIGHT)) {
                     game.getPlayer().setxMove(5);
                     game.getPlayer().setDirection(DIRECTION.RIGHT);
                 }

@@ -36,11 +36,17 @@ public class Enemy extends AbstractUnit {
                         if (player.getX() < getX() && player.getY() == getY()) {
                             bullets.add(new Bullet(this, Assets.getBulletLeft(), x, y, 10, 10));
                         }
+                        if (level.getEagle().getX() < getX() && level.getEagle().getY() == getY()) {
+                            bullets.add(new Bullet(this, Assets.getBulletLeft(), x, y, 10, 10));
+                        }
                         break;
                     case RIGHT:
                         setDirection(DIRECTION.RIGHT);
                         setxMove(a);
                         if (player.getX() > getX() && player.getY() == getY()) {
+                            bullets.add(new Bullet(this, Assets.getBulletRight(), x, y, 10, 10));
+                        }
+                        if (level.getEagle().getX() > getX() && level.getEagle().getY() == getY()) {
                             bullets.add(new Bullet(this, Assets.getBulletRight(), x, y, 10, 10));
                         }
                         break;
@@ -50,11 +56,17 @@ public class Enemy extends AbstractUnit {
                         if (player.getX() == getX() && player.getY() < getY()) {
                             bullets.add(new Bullet(this, Assets.getBulletUp(), x, y, 10, 10));
                         }
+                        if (level.getEagle().getX() == getX() && level.getEagle().getY() < getY()) {
+                            bullets.add(new Bullet(this, Assets.getBulletUp(), x, y, 10, 10));
+                        }
                         break;
                     case DOWN:
                         setDirection(DIRECTION.DOWN);
                         setyMove(a);
                         if (player.getX() == getX() && player.getY() > getY()) {
+                            bullets.add(new Bullet(this, Assets.getBulletDown(), x, y, 10, 10));
+                        }
+                        if (level.getEagle().getX() == getX() && level.getEagle().getY() > getY()) {
                             bullets.add(new Bullet(this, Assets.getBulletDown(), x, y, 10, 10));
                         }
                         break;

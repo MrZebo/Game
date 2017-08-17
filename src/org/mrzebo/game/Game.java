@@ -106,8 +106,8 @@ public class Game implements Runnable {
     }
 
     private void gameOver() {
-        if (level.getEnemyCount() == 0){
-            System.out.println("into");
+        if (level.getEagle().getLife() <= 0){
+            System.out.println("life is zero");
             g = bs.getDrawGraphics();
             g.clearRect(0, 0, width, height);
             g.setColor(Color.BLACK);
@@ -115,7 +115,6 @@ public class Game implements Runnable {
             g.drawImage(Assets.getGameOver(), 300, 300, null);
             bs.show();
             g.dispose();
-            System.out.println("make running false");
             running = false;
         }
     }
@@ -130,12 +129,6 @@ public class Game implements Runnable {
         g.clearRect(0, 0, width, height);
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, width, height);
-        g.drawImage(Assets.getExplosive()[0], 300, 450, null);
-        g.drawImage(Assets.getExplosive()[1], 330, 450, null);
-        g.drawImage(Assets.getExplosive()[2], 350, 450, null);
-        g.drawImage(Assets.getFullWhiteWall(), 400, 400, null);
-//        g.drawImage(Assets.getGameOver(), 300, 300, null);
-
         player.render(g);
         level.render(g);
         bs.show();
