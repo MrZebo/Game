@@ -2,6 +2,8 @@ package org.mrzebo.game.entities;
 
 import org.mrzebo.game.DIRECTION;
 import org.mrzebo.game.entities.units.AbstractUnit;
+import org.mrzebo.game.entities.units.Enemy;
+import org.mrzebo.game.entities.units.Player;
 import org.mrzebo.game.gfx.Assets;
 
 import java.awt.*;
@@ -46,6 +48,17 @@ public class Bullet extends Entity {
             }
 
         }
+        if (unit instanceof Player) {
+//            if (unit.getGame().getLevel().getEnemy().getX() == x && unit.getGame().getLevel().getEnemy().getY() == y) {
+//                unit.getGame().getLevel().getEnemy().setNotShot(false);
+//            }
+            for (Enemy enemy : unit.getGame().getLevel().getEnemies()) {
+                if(enemy.getX() == x && enemy.getY() == y){
+                    enemy.setNotShot(false);
+                }
+            }
+        }
+
     }
 
     @Override
@@ -56,6 +69,7 @@ public class Bullet extends Entity {
 
 
     private void move() {
+        int move = unit.getGame().move(unit);
         if (drawable) {
             int height = unit.getGame().getDisplay().getHeight();
             int width = unit.getGame().getDisplay().getWidth();
@@ -63,16 +77,16 @@ public class Bullet extends Entity {
                 if (x > -10 && x < width) {
                     switch (getDirection()) {
                         case UP:
-                            y -= 1;
+                            y -= move;
                             break;
                         case DOWN:
-                            y += 1;
+                            y += move;
                             break;
                         case RIGHT:
-                            x += 1;
+                            x += move;
                             break;
                         case LEFT:
-                            x -= 1;
+                            x -= move;
                             break;
                     }
                 }
@@ -100,6 +114,7 @@ public class Bullet extends Entity {
                     break;
             }
         } else {
+            setDrawable(false);
             setNotShot(false);
             unit.getBullets().remove(this);
         }

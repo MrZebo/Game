@@ -25,6 +25,7 @@ public class Assets {
     private static BufferedImage empty;
     private static BufferedImage emptyBullet;
     private static BufferedImage wood;
+    private static BufferedImage gameOver;
     private static BufferedImage[] explosive = new BufferedImage[3];
 
 
@@ -72,9 +73,14 @@ public class Assets {
         return enemyRight;
     }
 
+    public static BufferedImage getGameOver() {
+        return gameOver;
+    }
+
     public static void init() {
         SpriteSheet spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test.png"));
         wood = spriteSheet.getImage(272, 32, 15, 15);
+        gameOver = spriteSheet.getImage(288, 184, 32, 15);
         fullWhiteWall = spriteSheet.getImage(256, 16, 15, 15);
         explosive[0] = spriteSheet.getImage(255, 130, 14, 14);
         explosive[1] = spriteSheet.getImage(270, 130, 16, 14);

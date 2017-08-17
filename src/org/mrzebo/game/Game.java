@@ -15,7 +15,6 @@ import java.awt.image.BufferStrategy;
 public class Game implements Runnable {
     private int width;
     private int height;
-    public int PLAYER_MOVE = 5;
     private static int lvl = 0;
     private String title;
     private Display display;
@@ -26,7 +25,6 @@ public class Game implements Runnable {
     private KeyManager keyManager;
     private Player player;
     private Level level;
-    private Enemy enemy;
 
     public static int getLvl() {
         return lvl;
@@ -57,10 +55,8 @@ public class Game implements Runnable {
         keyManager = new KeyManager(this);
         display.getCanvas().addKeyListener(keyManager);
         player = new Player(this, Assets.getPlayerUp(), width / 2, height / 2);
-        level.setEnemy(enemy);
         level.setGame(this);
         level.setPlayer(player);
-        enemy = new Enemy(this, level, Assets.getEnemyDown(), 330, 0, 15, 15);
 
     }
 
@@ -107,8 +103,21 @@ public class Game implements Runnable {
     private void tick() {
         player.tick();
         level.tick();
-        enemy.tick();
+    }
 
+    private void gameOver() {
+        if (level.getEnemyCount() == 0){
+            System.out.println("into");
+            g = bs.getDrawGraphics();
+            g.clearRect(0, 0, width, height);
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 0, width, height);
+            g.drawImage(Assets.getGameOver(), 300, 300, null);
+            bs.show();
+            g.dispose();
+            System.out.println("make running false");
+            running = false;
+        }
     }
 
     private void render() {
@@ -121,18 +130,14 @@ public class Game implements Runnable {
         g.clearRect(0, 0, width, height);
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, width, height);
-//        g.drawImage(Assets.getFullWall(), 150, 150, null);
-//        g.drawImage(Assets.getEnemyUp(), 450, 450, null);
-//        g.drawImage(Assets.getEagle(), 350, 200, null);
-//        g.drawImage(Assets.getBulletUp(), 450, 300, null);
         g.drawImage(Assets.getExplosive()[0], 300, 450, null);
         g.drawImage(Assets.getExplosive()[1], 330, 450, null);
         g.drawImage(Assets.getExplosive()[2], 350, 450, null);
-//        g.drawImage(Assets.getPlayerUp(), 400, 400, null);
         g.drawImage(Assets.getFullWhiteWall(), 400, 400, null);
+//        g.drawImage(Assets.getGameOver(), 300, 300, null);
+
         player.render(g);
         level.render(g);
-        enemy.render(g);
         bs.show();
         g.dispose();
 
@@ -153,6 +158,7 @@ public class Game implements Runnable {
             if (delta >= 1) {
                 tick();
                 render();
+                gameOver();
                 delta--;
             }
         }

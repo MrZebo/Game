@@ -3,6 +3,7 @@ package org.mrzebo.game.levels;
 import org.mrzebo.game.entities.Eagle;
 import org.mrzebo.game.entities.Entity;
 import org.mrzebo.game.entities.Wall;
+import org.mrzebo.game.entities.units.Enemy;
 import org.mrzebo.game.gfx.Assets;
 
 import java.awt.*;
@@ -12,17 +13,38 @@ public class Level1 extends Level {
 
 
     Level1() {
-        enemyCount = 15;
+        enemyCount = 5;
         init();
+        enemies = new Enemy[3];
     }
 
     @Override
     public void tick() {
-
+        int x = 200;
+        for (int i = 0; i < enemies.length; i++) {
+            if (enemies[i] == null) {
+                enemies[i] = new Enemy(game, this, Assets.getEnemyDown(), x += 100, 0, 15, 15);
+            }
+        }
+        x = 200;
+        for (int i = 0; i < enemies.length; i++) {
+            if (enemies[i].isNotShot()) {
+                enemies[i].tick();
+            } else {
+                if (getEnemyCount() > 0) {
+                    lowerEnemyCount();
+                    enemies[i] = new Enemy(game, this, Assets.getEnemyDown(), x+=100, 0, 15, 15);
+                }
+            }
+        }
+        x = 200;
+        System.out.println(enemyCount);
     }
 
     public void init() {
         canvas = new Canvas();
+//        enemy = new Enemy(game, this, Assets.getEnemyDown(), 330, 0, 15, 15);
+//        setEnemy(enemy);
         getEntities().add(new Eagle(Assets.getEagle(), 300, 585, 15, 15));
         getEntities().add(new Wall(Assets.getFullWall(), 0, 570, 15, 15));
         getEntities().add(new Wall(Assets.getFullWall(), 15, 570, 15, 15));
@@ -120,8 +142,10 @@ public class Level1 extends Level {
 
     public void render(Graphics g) {
 //        enemy.render(g);
+        for (Enemy enemy : enemies) {
+            enemy.render(g);
+        }
         for (Entity entity : getEntities()) {
-//            g.drawImage(entity.getImage(), entity.getX(), entity.getY(), null);
             if (entity.isNotShot()) {
                 entity.render(g);
             } else {

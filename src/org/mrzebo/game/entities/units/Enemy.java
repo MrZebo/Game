@@ -17,7 +17,7 @@ public class Enemy extends AbstractUnit {
     private Player player;
 
     public Enemy(Game game, Level level, Image image, int x, int y, int width, int height) {
-        super(game,image, x, y, width, height);
+        super(game, image, x, y, width, height);
         direction = DIRECTION.DOWN;
         this.level = level;
         player = this.level.getGame().getPlayer();
@@ -27,48 +27,67 @@ public class Enemy extends AbstractUnit {
     @Override
     public void tick() {
         int a = level.getGame().move(this);
-        if (level.movable(this, direction)) {
-            switch (direction) {
-                case LEFT:
-                    setDirection(DIRECTION.LEFT);
-                    setxMove(-a);
-                    if (player.getX() < getX() && player.getY() == getY()) {
-                        bullets.add(new Bullet(this,Assets.getBulletLeft(),x,y,10,10));
-                    }
-                    break;
-                case RIGHT:
-                    setDirection(DIRECTION.RIGHT);
-                    setxMove(a);
-                    if(player.getX()>getX() && player.getY() == getY()){
-                        bullets.add(new Bullet(this,Assets.getBulletRight(),x,y,10,10));
-                    }
-                    break;
-                case UP:
-                    setDirection(DIRECTION.UP);
-                    setyMove(-a);
-                    if(player.getX() == getX() && player.getY()<getY()){
-                        bullets.add(new Bullet(this,Assets.getBulletUp(),x,y,10,10));
-                    }
-                    break;
-                case DOWN:
-                    setDirection(DIRECTION.DOWN);
-                    setyMove(a);
-                    if(player.getX() == getX()&& player.getY()>getY()){
-                        bullets.add(new Bullet(this,Assets.getBulletDown(),x,y,10,10));
-                    }
-                    break;
+        if (isNotShot) {
+            if (level.movable(this, direction)) {
+                switch (direction) {
+                    case LEFT:
+                        setDirection(DIRECTION.LEFT);
+                        setxMove(-a);
+                        if (player.getX() < getX() && player.getY() == getY()) {
+                            bullets.add(new Bullet(this, Assets.getBulletLeft(), x, y, 10, 10));
+                        }
+                        break;
+                    case RIGHT:
+                        setDirection(DIRECTION.RIGHT);
+                        setxMove(a);
+                        if (player.getX() > getX() && player.getY() == getY()) {
+                            bullets.add(new Bullet(this, Assets.getBulletRight(), x, y, 10, 10));
+                        }
+                        break;
+                    case UP:
+                        setDirection(DIRECTION.UP);
+                        setyMove(-a);
+                        if (player.getX() == getX() && player.getY() < getY()) {
+                            bullets.add(new Bullet(this, Assets.getBulletUp(), x, y, 10, 10));
+                        }
+                        break;
+                    case DOWN:
+                        setDirection(DIRECTION.DOWN);
+                        setyMove(a);
+                        if (player.getX() == getX() && player.getY() > getY()) {
+                            bullets.add(new Bullet(this, Assets.getBulletDown(), x, y, 10, 10));
+                        }
+                        break;
+                }
+            } else {
+                int b = (int) (Math.random() * 4);
+                setDirection(DIRECTION.values()[b]);
+                Image assets = null;
+                switch (b) {
+                    case 0:
+                        assets = Assets.getBulletUp();
+                        break;
+                    case 1:
+                        assets = Assets.getBulletDown();
+                        break;
+                    case 2:
+                        assets = Assets.getBulletRight();
+                        break;
+                    case 3:
+                        assets = Assets.getBulletLeft();
+                        break;
+
+                }
+                bullets.add(new Bullet(this, assets, x, y, 10, 10));
             }
-        } else {
-            int b = (int) (Math.random() * 4);
-            setDirection(DIRECTION.values()[b]);
+            move();
+            if (!bullets.isEmpty()) {
+                for (Bullet bullet : bullets) {
+                    bullet.tick();
+                }
+            }
         }
 
-        move();
-        if(!bullets.isEmpty()){
-            for (Bullet bullet : bullets) {
-                bullet.tick();
-            }
-        }
     }
 
     @Override
@@ -88,10 +107,8 @@ public class Enemy extends AbstractUnit {
                     g.drawImage(Assets.getEnemyRight(), x, y, null);
                     break;
             }
-        } else {
-            setNotShot(false);
         }
-        if(!bullets.isEmpty()){
+        if (!bullets.isEmpty()) {
             for (Bullet bullet : bullets) {
                 bullet.render(g);
             }

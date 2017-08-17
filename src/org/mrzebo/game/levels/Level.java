@@ -14,14 +14,23 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class Level {
     private CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList();
-    private Canvas canvas = new Canvas();
+    private CopyOnWriteArrayList<AbstractUnit> units = new CopyOnWriteArrayList<>();
     private Player player;
+    private Canvas canvas = new Canvas();
     protected int enemyCount;
-    protected Enemy enemy;
+    protected Enemy[] enemies;
     protected Game game;
 
     public void tick() {
 
+    }
+
+    public int getEnemyCount() {
+        return enemyCount;
+    }
+
+    public void lowerEnemyCount() {
+        enemyCount -= 1;
     }
 
     public boolean movable(AbstractUnit unit, DIRECTION direction) {
@@ -131,12 +140,8 @@ public abstract class Level {
         return true;
     }
 
-    public Enemy getEnemy() {
-        return enemy;
-    }
-
-    public void setEnemy(Enemy enemy) {
-        this.enemy = enemy;
+    public Enemy[] getEnemies() {
+        return enemies;
     }
 
     public Game getGame() {

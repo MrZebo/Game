@@ -47,7 +47,6 @@ public class KeyManager implements KeyListener {
                 }
                 break;
             case (KeyEvent.VK_SPACE):
-                System.out.println(game.getPlayer().getX() + " " + game.getPlayer().getY());
                 game.getPlayer().getBullets().add(new Bullet(game.getPlayer(), Assets.getBulletUp(), game.getPlayer().getX(), game.getPlayer().getY(), 10, 10));
                 break;
         }
