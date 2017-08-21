@@ -13,6 +13,7 @@ public class Assets {
     private static BufferedImage playerDown;
     private static BufferedImage playerLeft;
     private static BufferedImage playerRight;
+    private static BufferedImage enemy;
     private static BufferedImage enemyUp;
     private static BufferedImage enemyDown;
     private static BufferedImage enemyLeft;
@@ -77,8 +78,14 @@ public class Assets {
         return gameOver;
     }
 
+    public static BufferedImage getEnemy() {
+        return enemy;
+    }
+
     public static void init() {
-        SpriteSheet spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test.png"));
+        SpriteSheet spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test1.png"));
+        enemy = spriteSheet.getImage(320, 192, 9, 8);
+        spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test.png"));
         wood = spriteSheet.getImage(272, 32, 15, 15);
         gameOver = spriteSheet.getImage(288, 184, 32, 15);
         fullWhiteWall = spriteSheet.getImage(256, 16, 15, 15);

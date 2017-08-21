@@ -7,7 +7,6 @@ import org.mrzebo.game.entities.units.Player;
 import org.mrzebo.game.gfx.Assets;
 
 import java.awt.*;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Bullet extends Entity {
     private AbstractUnit unit;
@@ -50,14 +49,9 @@ public class Bullet extends Entity {
 
         }
         if (unit instanceof Player) {
-//            if (unit.getGame().getLevel().getEnemies().length == 0) return;
+
             for (Enemy enemy : unit.getGame().getLevel().getEnemies()) {
                 if (enemy == null) return;
-//                System.out.println(" X " + x);
-//                System.out.println(" Y " + y);
-//                System.out.println(enemy);
-//                System.out.println("enemy X " + enemy.getX());
-//                System.out.println("enemy Y " + enemy.getY());
                 if (x == enemy.getX() && y == enemy.getY()) {
                     enemy.setNotShot(false);
                     setDrawable(false);
@@ -81,13 +75,16 @@ public class Bullet extends Entity {
 
             }
         }
-//        if(unit instanceof Enemy){
+        if (unit instanceof Enemy) {
 //            if(unit.getGame().getLevel().getEagle().getX() == x && unit.getGame().getLevel().getEagle().getY() == y){
-////                System.out.println("eagle die");
-////                unit.getGame().getLevel().getEagle().lifeCount();
-////                System.out.println(unit.getGame().getLevel().getEagle().getLife());
+//                System.out.println("eagle die");
+//                unit.getGame().getLevel().getEagle().lifeCount();
 //            }
-//        }
+//            if(x == unit.getGame().getPlayer().getX() && y == unit.getGame().getPlayer().getY()){
+//                System.out.println("Player died");
+//                unit.getGame().getPlayer().lifeCount();
+//            }
+        }
 
 
     }
@@ -100,7 +97,8 @@ public class Bullet extends Entity {
 
 
     private void move() {
-        int move = unit.getGame().move(unit);
+//        int move = unit.getGame().move(unit);
+        int move = 5;
         if (drawable) {
             int height = unit.getGame().getDisplay().getHeight();
             int width = unit.getGame().getDisplay().getWidth();
@@ -129,6 +127,10 @@ public class Bullet extends Entity {
     public void render(Graphics g) {
         // center of model
         int iDontNowWhy = 3;
+        if (x > 590) return;
+        if (x < 15) return;
+        if (y > 575) return;
+        if (y < 15) return;
         if (drawable) {
             switch (direction) {
                 case UP:

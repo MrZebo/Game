@@ -15,6 +15,8 @@ import java.awt.image.BufferStrategy;
 public class Game implements Runnable {
     private int width;
     private int height;
+    private int blackRectWidth;
+    private int blackRectHeight;
     private static int lvl = 0;
     private String title;
     private Display display;
@@ -30,14 +32,16 @@ public class Game implements Runnable {
         return lvl;
     }
 
-    public static void setLvl(int lvl) {
-        Game.lvl = lvl;
+    public static void lvlUp() {
+        lvl++;
     }
 
     Game(String title, int width, int height) {
         this.title = title;
         this.width = width;
         this.height = height;
+        blackRectWidth = width - 115;
+        blackRectHeight = height - 30;
     }
 
     public Display getDisplay() {
@@ -50,10 +54,10 @@ public class Game implements Runnable {
 
     private void init() {
         Assets.init();
-        level = LevelFactory.getLevel(getLvl());
-        level.setGame(this);
-        player = new Player(this, Assets.getPlayerUp(), width / 2, height / 2);
-        level.setPlayer(player);
+        player = new Player(this, Assets.getPlayerUp(), (width / 2) - 50, height / 2);
+        level = LevelFactory.getLevel(this, player, getLvl());
+//        level.setGame(this);
+//        level.setPlayer(player);
         display = new Display(level, title, width, height);
         keyManager = new KeyManager(this);
         display.getCanvas().addKeyListener(keyManager);
@@ -117,6 +121,17 @@ public class Game implements Runnable {
             g.dispose();
             running = false;
         }
+        if (level.getPlayer().getLife() <= 0) {
+            System.out.println("life is zero");
+            g = bs.getDrawGraphics();
+            g.clearRect(0, 0, width, height);
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 0, width, height);
+            g.drawImage(Assets.getGameOver(), 300, 300, null);
+            bs.show();
+            g.dispose();
+            running = false;
+        }
     }
 
     private void render() {
@@ -126,9 +141,16 @@ public class Game implements Runnable {
             return;
         }
         g = bs.getDrawGraphics();
+//        g.clearRect(0, 0, width, height);
+//        g.setColor(Color.BLACK);
+//        g.fillRect(0, 0, width, height);
+//        g.setColor(Color.GRAY);
+//        g.fillRect(height, 0, 100, height);
         g.clearRect(0, 0, width, height);
-        g.setColor(Color.BLACK);
+        g.setColor(Color.GRAY);
         g.fillRect(0, 0, width, height);
+        g.setColor(Color.BLACK);
+        g.fillRect(15, 15, blackRectWidth, blackRectHeight);
         player.render(g);
         level.render(g);
         bs.show();

@@ -50,7 +50,7 @@ public abstract class Level {
         switch (direction) {
             case UP:
                 unit.setDirection(DIRECTION.UP);
-                if (unit.getY() - move <= -5) {
+                if (unit.getY() - move <= 10) {
 //                if (unit.getY() - unit.getGame().move(unit) <= 0) {
                     return false;
                 }
@@ -82,7 +82,7 @@ public abstract class Level {
                 break;
             case DOWN:
                 unit.setDirection(DIRECTION.DOWN);
-                if (unit.getY() + move >= 590) {
+                if (unit.getY() + move >= 575) {
 //                if (unit.getY() + unit.getGame().move(unit) >= 585) {
                     return false;
                 }
@@ -114,7 +114,7 @@ public abstract class Level {
                 break;
             case LEFT:
                 unit.setDirection(DIRECTION.LEFT);
-                if (unit.getX() - move <= -5) {
+                if (unit.getX() - move <= 10) {
 //                if (unit.getX() - unit.getGame().move(unit) <= 0) {
                     return false;
                 }
@@ -185,6 +185,10 @@ public abstract class Level {
         this.game = game;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
     public void setPlayer(Player player) {
         this.player = player;
     }
@@ -197,7 +201,10 @@ public abstract class Level {
         return this.canvas;
     }
 
-    Level() {
+    Level(Game game, Player player) {
+        this.game = game;
+        this.player = player;
+
     }
 
     abstract void init();

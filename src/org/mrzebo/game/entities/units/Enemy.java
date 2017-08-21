@@ -7,7 +7,6 @@ import org.mrzebo.game.gfx.Assets;
 import org.mrzebo.game.levels.Level;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -21,8 +20,22 @@ public class Enemy extends AbstractUnit {
         super(game, image, x, y, width, height);
         direction = DIRECTION.DOWN;
         this.level = level;
-        player = this.level.getGame().getPlayer();
+        player = level.getPlayer();
         bullets = new CopyOnWriteArrayList<>();
+    }
+
+    private boolean frequency() {
+        int fps = 60;
+        double timePerTick = 1000000000 / fps;
+        double delta = 0;
+        long now;
+        long lastTime = System.nanoTime();
+        while (true) {
+            now = System.nanoTime();
+            delta += (now - lastTime) / timePerTick;
+            lastTime = now;
+            return delta >= 1;
+        }
     }
 
     @Override
@@ -34,40 +47,43 @@ public class Enemy extends AbstractUnit {
                     case LEFT:
                         setDirection(DIRECTION.LEFT);
                         setxMove(-a);
-                        if (player.getX() < getX() && player.getY() == getY()) {
+                        if (player.getX() < getX() && player.getY() == getY() && frequency()) {
                             bullets.add(new Bullet(this, Assets.getBulletLeft(), x, y, 10, 10));
                         }
-                        if (level.getEagle().getX() < getX() && level.getEagle().getY() == getY()) {
+                        if (level.getEagle().getX() < getX() && level.getEagle().getY() == getY() && frequency()) {
                             bullets.add(new Bullet(this, Assets.getBulletLeft(), x, y, 10, 10));
                         }
                         break;
                     case RIGHT:
                         setDirection(DIRECTION.RIGHT);
                         setxMove(a);
-                        if (player.getX() > getX() && player.getY() == getY()) {
+                        if (player.getX() > getX() && player.getY() == getY() && frequency()) {
                             bullets.add(new Bullet(this, Assets.getBulletRight(), x, y, 10, 10));
+
                         }
-                        if (level.getEagle().getX() > getX() && level.getEagle().getY() == getY()) {
+                        if (level.getEagle().getX() > getX() && level.getEagle().getY() == getY() && frequency()) {
                             bullets.add(new Bullet(this, Assets.getBulletRight(), x, y, 10, 10));
                         }
                         break;
                     case UP:
                         setDirection(DIRECTION.UP);
                         setyMove(-a);
-                        if (player.getX() == getX() && player.getY() < getY()) {
+                        if (player.getX() == getX() && player.getY() < getY() && frequency()) {
                             bullets.add(new Bullet(this, Assets.getBulletUp(), x, y, 10, 10));
+
                         }
-                        if (level.getEagle().getX() == getX() && level.getEagle().getY() < getY()) {
+                        if (level.getEagle().getX() == getX() && level.getEagle().getY() < getY() && frequency()) {
                             bullets.add(new Bullet(this, Assets.getBulletUp(), x, y, 10, 10));
                         }
                         break;
                     case DOWN:
                         setDirection(DIRECTION.DOWN);
                         setyMove(a);
-                        if (player.getX() == getX() && player.getY() > getY()) {
+                        if (player.getX() == getX() && player.getY() > getY() && frequency()) {
                             bullets.add(new Bullet(this, Assets.getBulletDown(), x, y, 10, 10));
+
                         }
-                        if (level.getEagle().getX() == getX() && level.getEagle().getY() > getY()) {
+                        if (level.getEagle().getX() == getX() && level.getEagle().getY() > getY() && frequency()) {
                             bullets.add(new Bullet(this, Assets.getBulletDown(), x, y, 10, 10));
                         }
                         break;

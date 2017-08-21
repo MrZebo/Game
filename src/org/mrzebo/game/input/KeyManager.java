@@ -21,6 +21,7 @@ public class KeyManager implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
+//        System.out.println(game.getPlayer().getX() + "   " + game.getPlayer().getY());
         switch (key) {
             case (KeyEvent.VK_UP):
                 if (game.getLevel().movable(game.getPlayer(), DIRECTION.UP)) {

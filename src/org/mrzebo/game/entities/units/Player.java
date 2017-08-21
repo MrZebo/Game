@@ -12,6 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Player extends AbstractUnit {
     private Game game;
+    int score;
 
 
     public CopyOnWriteArrayList<Bullet> getBullets() {
