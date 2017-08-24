@@ -116,7 +116,7 @@ public class Game implements Runnable {
             g.clearRect(0, 0, width, height);
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, width, height);
-            g.drawImage(Assets.getGameOver(), 300, 300, null);
+            g.drawImage(Assets.getGameOver(), width/2, 300, null);
             bs.show();
             g.dispose();
             running = false;

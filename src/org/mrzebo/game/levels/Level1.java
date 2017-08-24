@@ -1,6 +1,7 @@
 package org.mrzebo.game.levels;
 
 import org.mrzebo.game.Game;
+import org.mrzebo.game.entities.Buff;
 import org.mrzebo.game.entities.Eagle;
 import org.mrzebo.game.entities.Entity;
 import org.mrzebo.game.entities.Wall;
@@ -10,15 +11,19 @@ import org.mrzebo.game.gfx.Assets;
 
 import java.awt.*;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Level1 extends Level {
     private Canvas canvas;
+    private long timeStart;
 
 
     Level1(Game game, Player player) {
         super(game, player);
         enemyCount = 15;
+        buffCount = 5;
         init();
+        timeStart = System.nanoTime();
         eagle = new Eagle(Assets.getEagle(), 300, 570, 15, 15);
         enemies = new CopyOnWriteArrayList<>();
         int x = 75;
@@ -37,7 +42,7 @@ public class Level1 extends Level {
                 if (enemy.isNotShot()) {
                     enemy.tick();
                 } else {
-                    if (getEnemyCount()  > 0) {
+                    if (getEnemyCount() > 0) {
                         lowerEnemyCount();
                         enemies.remove(enemy);
                         enemies.add(new Enemy(game, this, Assets.getEnemyDown(), x += 100, 15, 15, 15));
@@ -56,6 +61,10 @@ public class Level1 extends Level {
 
                 }
             }
+        }
+        buffObserver();
+        if(buff!=null){
+            buff.tick();
         }
     }
 
@@ -83,6 +92,16 @@ public class Level1 extends Level {
         }
     }
 
+    @Override
+    void buffObserver() {
+        long time = TimeUnit.NANOSECONDS.toSeconds(System.nanoTime() - timeStart);
+        System.out.println(time);
+        if (time % 15 == 0 && time != 0 && buff == null) {
+            buff = new Buff(Assets.getBuffStar(), 30, 30, 15, 15);
+        }
+
+    }
+
     public Canvas getCanvas() {
         return canvas;
     }
@@ -91,6 +110,9 @@ public class Level1 extends Level {
         int x = 615;
         int y = 25;
         eagle.render(g);
+        if (buff != null) {
+            buff.render(g);
+        }
         for (int i = 1; i <= enemyCount; i++) {
             g.drawImage(Assets.getEnemy(), x, y, null);
             x += 15;

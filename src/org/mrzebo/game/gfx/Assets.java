@@ -28,6 +28,9 @@ public class Assets {
     private static BufferedImage wood;
     private static BufferedImage gameOver;
     private static BufferedImage[] explosive = new BufferedImage[3];
+    private static BufferedImage buffStar;
+    private static BufferedImage buffClock;
+    private static BufferedImage buffHelmet;
 
 
     public static BufferedImage getBulletUp() {
@@ -82,8 +85,23 @@ public class Assets {
         return enemy;
     }
 
+    public static BufferedImage getBuffStar() {
+        return buffStar;
+    }
+
+    public static BufferedImage getBuffClock() {
+        return buffClock;
+    }
+
+    public static BufferedImage getBuffHelmet() {
+        return buffHelmet;
+    }
+
     public static void init() {
         SpriteSheet spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test1.png"));
+        buffStar = spriteSheet.getImage(304, 112, 15, 15);
+        buffClock = spriteSheet.getImage(272, 112, 15, 15);
+        buffHelmet = spriteSheet.getImage(256, 112, 15, 15);
         enemy = spriteSheet.getImage(320, 192, 9, 8);
         spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test.png"));
         wood = spriteSheet.getImage(272, 32, 15, 15);
