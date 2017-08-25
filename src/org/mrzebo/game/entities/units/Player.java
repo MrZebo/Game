@@ -25,6 +25,7 @@ public class Player extends AbstractUnit {
         this.game = game;
         bullets = new CopyOnWriteArrayList<>();
         direction = DIRECTION.UP;
+        life = 1;
 //        new BulletHandler().start();
     }
 

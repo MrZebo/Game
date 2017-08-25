@@ -56,8 +56,6 @@ public class Game implements Runnable {
         Assets.init();
         player = new Player(this, Assets.getPlayerUp(), (width / 2) - 50, height / 2);
         level = LevelFactory.getLevel(this, player, getLvl());
-//        level.setGame(this);
-//        level.setPlayer(player);
         display = new Display(level, title, width, height);
         keyManager = new KeyManager(this);
         display.getCanvas().addKeyListener(keyManager);
@@ -109,29 +107,17 @@ public class Game implements Runnable {
         level.tick();
     }
 
-    private void gameOver() {
-        if (level.getEagle().getLife() <= 0) {
-            System.out.println("life is zero");
-            g = bs.getDrawGraphics();
-            g.clearRect(0, 0, width, height);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, width, height);
-            g.drawImage(Assets.getGameOver(), 300, 300, null);
-            bs.show();
-            g.dispose();
-            running = false;
-        }
-        if (level.getPlayer().getLife() <= 0) {
-            System.out.println("life is zero");
-            g = bs.getDrawGraphics();
-            g.clearRect(0, 0, width, height);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, width, height);
-            g.drawImage(Assets.getGameOver(), 300, 300, null);
-            bs.show();
-            g.dispose();
-            running = false;
-        }
+
+    private void gameOver(Graphics g) {
+        g.clearRect(0, 0, width, height);
+        g.setColor(Color.GRAY);
+        g.fillRect(0, 0, width, height);
+        g.setColor(Color.BLACK);
+        g.fillRect(15, 15, blackRectWidth, blackRectHeight);
+        g.drawImage(Assets.getGameOver(), blackRectWidth / 2, blackRectHeight / 2, null);
+        bs.show();
+        g.dispose();
+        running = false;
     }
 
     private void render() {
@@ -141,11 +127,6 @@ public class Game implements Runnable {
             return;
         }
         g = bs.getDrawGraphics();
-//        g.clearRect(0, 0, width, height);
-//        g.setColor(Color.BLACK);
-//        g.fillRect(0, 0, width, height);
-//        g.setColor(Color.GRAY);
-//        g.fillRect(height, 0, 100, height);
         g.clearRect(0, 0, width, height);
         g.setColor(Color.GRAY);
         g.fillRect(0, 0, width, height);
@@ -153,6 +134,9 @@ public class Game implements Runnable {
         g.fillRect(15, 15, blackRectWidth, blackRectHeight);
         player.render(g);
         level.render(g);
+        if (level.getEagle().getLife() <= 0 || player.getLife() <= 0) {
+            gameOver(g);
+        }
         bs.show();
         g.dispose();
 
@@ -173,7 +157,6 @@ public class Game implements Runnable {
             if (delta >= 1) {
                 tick();
                 render();
-                gameOver();
                 delta--;
             }
         }

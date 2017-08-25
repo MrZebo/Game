@@ -4,11 +4,12 @@ package org.mrzebo.game.levels;
 
 import org.mrzebo.game.DIRECTION;
 import org.mrzebo.game.Game;
+import org.mrzebo.game.entities.Buff;
 import org.mrzebo.game.entities.Eagle;
-import org.mrzebo.game.entities.units.Enemy;
 import org.mrzebo.game.entities.Entity;
-import org.mrzebo.game.entities.units.Player;
 import org.mrzebo.game.entities.units.AbstractUnit;
+import org.mrzebo.game.entities.units.Enemy;
+import org.mrzebo.game.entities.units.Player;
 
 import java.awt.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -17,16 +18,16 @@ public abstract class Level {
     private CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList();
     private CopyOnWriteArrayList<AbstractUnit> units = new CopyOnWriteArrayList<>();
     private Player player;
-    private Canvas canvas = new Canvas();
+    private Canvas canvas;
     protected int enemyCount;
     //    protected Enemy[] enemies;
+    protected Buff buff;
+    protected int buffCount;
     protected CopyOnWriteArrayList<Enemy> enemies;
     protected Eagle eagle;
     protected Game game;
 
-    public void tick() {
-
-    }
+    abstract void buffObserver();
 
     public Eagle getEagle() {
         return eagle;
@@ -209,6 +210,8 @@ public abstract class Level {
 
     abstract void init();
 
-    public abstract void render(Graphics var1);
+    public abstract void tick();
+
+    public abstract void render(Graphics g);
 }
 
