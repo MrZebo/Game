@@ -6,27 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="1e935f4f-fd37-43a8-ac12-96bf663103e8" name="Default" comment="" />
-=======
-    <list default="true" id="1e935f4f-fd37-43a8-ac12-96bf663103e8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/mrzebo/game/entities/Buff.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/Game.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/Game_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/archive_jar.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Game/org/mrzebo/game/Game.class" afterPath="$PROJECT_DIR$/out/production/Game/org/mrzebo/game/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Game/org/mrzebo/game/entities/Bullet.class" afterPath="$PROJECT_DIR$/out/production/Game/org/mrzebo/game/entities/Bullet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Game/org/mrzebo/game/entities/units/Player$1.class" afterPath="$PROJECT_DIR$/out/production/Game/org/mrzebo/game/entities/units/Player$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Game/org/mrzebo/game/entities/units/Player.class" afterPath="$PROJECT_DIR$/out/production/Game/org/mrzebo/game/entities/units/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mrzebo/game/Game.java" afterPath="$PROJECT_DIR$/src/org/mrzebo/game/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mrzebo/game/entities/Bullet.java" afterPath="$PROJECT_DIR$/src/org/mrzebo/game/entities/Bullet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mrzebo/game/entities/units/Player.java" afterPath="$PROJECT_DIR$/src/org/mrzebo/game/entities/units/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mrzebo/game/gfx/Assets.java" afterPath="$PROJECT_DIR$/src/org/mrzebo/game/gfx/Assets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mrzebo/game/levels/Level.java" afterPath="$PROJECT_DIR$/src/org/mrzebo/game/levels/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/mrzebo/game/levels/Level1.java" afterPath="$PROJECT_DIR$/src/org/mrzebo/game/levels/Level1.java" />
-    </list>
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,41 +21,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/units/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state relative-caret-position="396">
               <caret line="143" column="43" lean-forward="true" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
               <folding>
                 <element signature="method#frequency#0;class#Enemy#0" expanded="false" />
                 <element signature="method#tick#0;class#Enemy#0" expanded="false" />
-=======
-            <state relative-caret-position="358">
-              <caret line="127" column="26" lean-forward="true" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
-              <folding>
-                <element signature="method#frequency#0;class#Enemy#0" expanded="false" />
-                <element signature="method#tick#0;class#Enemy#0" expanded="false" />
-                <marker date="1503320007338" expanded="false" signature="5334:5380" ph="..." />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Level1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Level1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/levels/Level1.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state relative-caret-position="119">
               <caret line="108" column="42" lean-forward="true" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
-=======
-            <state relative-caret-position="833">
-              <caret line="96" column="36" lean-forward="false" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
               <folding>
-                <element signature="method#Level1#0;class#Level1#0" expanded="false" />
                 <element signature="method#init#0;class#Level1#0" expanded="false" />
+                <element signature="method#render#0;class#Level1#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,54 +50,13 @@
       <file leaf-file-name="Buff.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/Buff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Level.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/levels/Level.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-              <folding>
-                <element signature="method#movable#0;class#Level#0" expanded="false" />
-                <element signature="method#Level#0;class#Level#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Buff.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/Buff.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state relative-caret-position="204">
               <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
               <folding />
-=======
-            <state relative-caret-position="527">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding>
-                <element signature="method#Game#0;class#Game#0" expanded="false" />
-                <element signature="method#init#0;class#Game#0" expanded="false" />
-                <element signature="method#move#0;class#Game#0" expanded="false" />
-                <element signature="method#start#0;class#Game#0" expanded="false" />
-                <element signature="method#stop#0;class#Game#0" expanded="false" />
-                <element signature="method#tick#0;class#Game#0" expanded="false" />
-                <element signature="method#gameOver#0;class#Game#0" expanded="false" />
-                <element signature="method#render#0;class#Game#0" expanded="false" />
-                <element signature="e#3698#3741#0" expanded="false" />
-                <element signature="method#run#0;class#Game#0" expanded="false" />
-              </folding>
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="Level.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/levels/Level.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -160,39 +85,6 @@
                 <element signature="method#gameOver#0;class#Game#0" expanded="false" />
                 <element signature="method#render#0;class#Game#0" expanded="false" />
                 <element signature="method#run#0;class#Game#0" expanded="false" />
-=======
-      <file leaf-file-name="test1.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/test1.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Assets.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/gfx/Assets.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding>
-                <element signature="e#2549#2550#0" expanded="true" />
-                <element signature="e#2581#2582#0" expanded="true" />
-                <element signature="e#2632#2633#0" expanded="true" />
-                <element signature="e#2665#2666#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/Bullet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="42" column="61" lean-forward="false" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#move#0;class#Bullet#0" expanded="false" />
-                <marker date="1503324958613" expanded="true" signature="5292:5308" ph="{...}" />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
               </folding>
             </state>
           </provider>
@@ -261,13 +153,6 @@
         <option value="$PROJECT_DIR$/src/org/mrzebo/game/entities/Bullet.java" />
         <option value="$PROJECT_DIR$/src/org/mrzebo/game/entities/Eagle.java" />
         <option value="$PROJECT_DIR$/src/org/mrzebo/game/Game.java" />
-<<<<<<< HEAD
-=======
-        <option value="$PROJECT_DIR$/src/org/mrzebo/game/entities/units/Player.java" />
-        <option value="$PROJECT_DIR$/src/org/mrzebo/game/entities/units/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/org/mrzebo/game/entities/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/org/mrzebo/game/gfx/Assets.java" />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
         <option value="$PROJECT_DIR$/src/org/mrzebo/game/levels/Level.java" />
         <option value="$PROJECT_DIR$/src/org/mrzebo/game/entities/Buff.java" />
         <option value="$PROJECT_DIR$/src/org/mrzebo/game/levels/Level1.java" />
@@ -299,7 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -358,82 +242,6 @@
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-=======
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="display" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="units" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="gfx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="levels" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -771,21 +579,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32515338" sideWeight="0.50970876" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32055214" sideWeight="0.49029127" order="2" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.49029127" order="2" side_tool="false" content_ui="tabs" />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822084" sideWeight="0.4935275" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822084" sideWeight="0.49676377" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27625203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27184466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1008,28 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-<<<<<<< HEAD
-=======
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="method#Game#0;class#Game#0" expanded="false" />
-            <element signature="method#init#0;class#Game#0" expanded="false" />
-            <element signature="method#move#0;class#Game#0" expanded="false" />
-            <element signature="method#start#0;class#Game#0" expanded="false" />
-            <element signature="method#stop#0;class#Game#0" expanded="false" />
-            <element signature="method#tick#0;class#Game#0" expanded="false" />
-            <element signature="method#gameOver#0;class#Game#0" expanded="false" />
-            <element signature="method#render#0;class#Game#0" expanded="false" />
-            <element signature="e#3698#3741#0" expanded="false" />
-            <element signature="method#run#0;class#Game#0" expanded="false" />
-          </folding>
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
         </state>
       </provider>
     </entry>
@@ -1048,59 +826,26 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/res/test.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-=======
-    <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="42" column="61" lean-forward="false" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#move#0;class#Bullet#0" expanded="false" />
-            <marker date="1503324958613" expanded="true" signature="5292:5308" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/test.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
     <entry file="file://$PROJECT_DIR$/res/test1.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/units/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#1748#1790#0" expanded="false" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/gfx/Assets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="e#2549#2550#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2632#2633#0" expanded="true" />
-            <element signature="e#2665#2666#0" expanded="true" />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/units/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1108,21 +853,12 @@
           <folding>
             <element signature="method#frequency#0;class#Enemy#0" expanded="false" />
             <element signature="method#tick#0;class#Enemy#0" expanded="false" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/units/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#1748#1790#0" expanded="false" />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/Eagle.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="170">
           <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
           <folding />
@@ -1163,39 +899,11 @@
             <element signature="method#render#0;class#Game#0" expanded="false" />
             <element signature="method#run#0;class#Game#0" expanded="false" />
           </folding>
-=======
-        <state relative-caret-position="86">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="method#movable#0;class#Level#0" expanded="false" />
-            <element signature="method#Level#0;class#Level#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/levels/Level1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="96" column="36" lean-forward="false" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
-          <folding>
-            <element signature="method#Level1#0;class#Level1#0" expanded="false" />
-            <element signature="method#init#0;class#Level1#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/entities/Buff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-          <folding />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/mrzebo/game/levels/Level.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="187">
           <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding>
@@ -1220,14 +928,6 @@
           <folding>
             <element signature="method#init#0;class#Level1#0" expanded="false" />
             <element signature="method#render#0;class#Level1#0" expanded="false" />
-=======
-        <state relative-caret-position="358">
-          <caret line="127" column="26" lean-forward="true" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
-          <folding>
-            <element signature="method#frequency#0;class#Enemy#0" expanded="false" />
-            <element signature="method#tick#0;class#Enemy#0" expanded="false" />
-            <marker date="1503320007338" expanded="false" signature="5334:5380" ph="..." />
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
           </folding>
         </state>
       </provider>

@@ -107,7 +107,6 @@ public class Game implements Runnable {
         level.tick();
     }
 
-<<<<<<< HEAD
 
     private void gameOver(Graphics g) {
         g.clearRect(0, 0, width, height);
@@ -119,31 +118,6 @@ public class Game implements Runnable {
         bs.show();
         g.dispose();
         running = false;
-=======
-    private void gameOver() {
-        if (level.getEagle().getLife() <= 0) {
-            System.out.println("life is zero");
-            g = bs.getDrawGraphics();
-            g.clearRect(0, 0, width, height);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, width, height);
-            g.drawImage(Assets.getGameOver(), width/2, 300, null);
-            bs.show();
-            g.dispose();
-            running = false;
-        }
-        if (level.getPlayer().getLife() <= 0) {
-            System.out.println("life is zero");
-            g = bs.getDrawGraphics();
-            g.clearRect(0, 0, width, height);
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, width, height);
-            g.drawImage(Assets.getGameOver(), 300, 300, null);
-            bs.show();
-            g.dispose();
-            running = false;
-        }
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
     }
 
     private void render() {

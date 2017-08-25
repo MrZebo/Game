@@ -21,10 +21,6 @@ public class Buff extends Entity {
 
     @Override
     public void render(Graphics g) {
-<<<<<<< HEAD
-=======
-        System.out.println(blink);
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
         if(blink){
             g.drawImage(image, x, y, null);
         }

@@ -63,11 +63,7 @@ public class Level1 extends Level {
             }
         }
         buffObserver();
-<<<<<<< HEAD
         if (buff != null) {
-=======
-        if(buff!=null){
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
             buff.tick();
         }
     }
@@ -100,7 +96,6 @@ public class Level1 extends Level {
     @Override
     void buffObserver() {
         long time = TimeUnit.NANOSECONDS.toSeconds(System.nanoTime() - timeStart);
-<<<<<<< HEAD
 
         int x = (int) (Math.random() * 38);
         int y = (int) (Math.random() * 38);
@@ -133,13 +128,6 @@ public class Level1 extends Level {
             if (x == entity.getX() && y == entity.getY()) return false;
         }
         return true;
-=======
-        System.out.println(time);
-        if (time % 15 == 0 && time != 0 && buff == null) {
-            buff = new Buff(Assets.getBuffStar(), 30, 30, 15, 15);
-        }
-
->>>>>>> 7058efad31142b2712027f7c207e5cdc3cd374b4
     }
 
     public Canvas getCanvas() {
