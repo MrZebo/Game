@@ -63,10 +63,13 @@ public class Assets {
     private static BufferedImage buffStar;
     private static BufferedImage buffClock;
     private static BufferedImage buffHelmet;
+<<<<<<< HEAD
     private static BufferedImage cursorYellow;
     private static BufferedImage cursorGreen;
     private static BufferedImage cursorRed;
     private static BufferedImage cursorSilver;
+=======
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
 
     public static BufferedImage getCursorYellow() {
         return cursorYellow;
@@ -164,17 +167,33 @@ public class Assets {
         return cursorSilver;
     }
 
+    public static BufferedImage getBuffStar() {
+        return buffStar;
+    }
+
+    public static BufferedImage getBuffClock() {
+        return buffClock;
+    }
+
+    public static BufferedImage getBuffHelmet() {
+        return buffHelmet;
+    }
+
     public static void init() {
         SpriteSheet spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test1.png"));
         buffStar = spriteSheet.getImage(304, 112, 15, 15);
         buffClock = spriteSheet.getImage(272, 112, 15, 15);
         buffHelmet = spriteSheet.getImage(256, 112, 15, 15);
+<<<<<<< HEAD
         enemyPicture = spriteSheet.getImage(320, 192, 9, 8);
         spriteSheet = new SpriteSheet(ImageLoader.loadImage("/cursor.png"));
         cursorYellow = spriteSheet.getImage(95, 0, 25, 25);
         cursorSilver = spriteSheet.getImage(224, 0, 25, 25);
         cursorGreen = spriteSheet.getImage(96, 118, 25, 25);
         cursorRed= spriteSheet.getImage(224, 119, 25, 25);
+=======
+        enemy = spriteSheet.getImage(320, 192, 9, 8);
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
         spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test.png"));
         wood = spriteSheet.getImage(272, 32, 15, 15);
         gameOver = spriteSheet.getImage(288, 184, 32, 15);

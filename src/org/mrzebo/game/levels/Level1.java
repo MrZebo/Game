@@ -20,11 +20,19 @@ public class Level1 extends Level {
 
     Level1(Game game, Player player) {
         super(game, player);
+<<<<<<< HEAD
         enemyCount = 300;
         buffCount = 5;
         init();
         timeStart = System.nanoTime();
         eagle = new Eagle(300, 570, 15, 15);
+=======
+        enemyCount = 15;
+        buffCount = 5;
+        init();
+        timeStart = System.nanoTime();
+        eagle = new Eagle(Assets.getEagle(), 300, 570, 15, 15);
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
         enemies = new CopyOnWriteArrayList<>();
         int x = 75;
         if (enemies.isEmpty()) {
@@ -98,16 +106,24 @@ public class Level1 extends Level {
     void buffObserver() {
         long time = TimeUnit.NANOSECONDS.toSeconds(System.nanoTime() - timeStart);
 
+<<<<<<< HEAD
         int x = (int) (Math.random() * 37);
         int y = (int) (Math.random() * 37);
         int a = 30;
         int[] steps = new int[37];
+=======
+        int x = (int) (Math.random() * 38);
+        int y = (int) (Math.random() * 38);
+        int a = 30;
+        int[] steps = new int[38];
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
         for (int i = 0; i < steps.length; i++) {
             steps[i] = a;
             a += 15;
         }
         if (time % 15 == 0) buff = null;
         if (canDraw(steps[x], steps[y])) {
+<<<<<<< HEAD
             if (time % 5 == 0 && time != 0 && buff == null && buffCount > 0) {
                 buff = new Buff(this, steps[x], steps[y], 15, 15);
                 buffCount--;
@@ -116,10 +132,22 @@ public class Level1 extends Level {
             while (!canDraw(steps[x], steps[y])) {
                 x = (int) (Math.random() * 37);
                 y = (int) (Math.random() * 37);
+=======
+//            System.out.println("in if " + canDraw(steps[x], steps[y]) + " x " + steps[x] + " y " + steps[y]);
+            if (time % 5 == 0 && time != 0 && buff == null) {
+                buff = new Buff(Assets.getBuffStar(), steps[x], steps[y], 15, 15);
+            }
+        } else {
+            while (!canDraw(steps[x], steps[y])) {
+//                System.out.println("in while " + canDraw(steps[x], steps[y]) + " x " + steps[x] + " y " + steps[y]);
+                x = (int) (Math.random() * 38);
+                y = (int) (Math.random() * 38);
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
             }
 
         }
 
+<<<<<<< HEAD
 //        if (time % 15 == 0) buff = null;
 //        if (time % 15 == 0) buff1 = null;
 //        if (time % 5 == 0 && time != 0 && buff == null) {
@@ -128,6 +156,9 @@ public class Level1 extends Level {
 //        if (time % 5 == 0 && time != 0 && buff1 == null) {
 //            buff1 = new Buff(this, 260, 15, 15, 15);
 //        }
+=======
+
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
     }
 
     private boolean canDraw(int x, int y) {
