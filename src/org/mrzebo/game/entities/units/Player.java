@@ -27,6 +27,10 @@ public class Player extends AbstractUnit {
         bullets = new CopyOnWriteArrayList<>();
         direction = DIRECTION.UP;
         life = 1;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
         upFirst = Assets.getPlayerUpFirst();
         upSecond = Assets.getPlayerUpSecond();
         downFirst = Assets.getPlayerDownFirst();
@@ -35,6 +39,12 @@ public class Player extends AbstractUnit {
         leftSecond = Assets.getPlayerLeftSecond();
         rightFirst = Assets.getPlayerRightFirst();
         rightSecond = Assets.getPlayerRightSecond();
+<<<<<<< HEAD
+=======
+=======
+//        new BulletHandler().start();
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
     }
 
     @Override

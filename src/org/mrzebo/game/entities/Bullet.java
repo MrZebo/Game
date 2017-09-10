@@ -90,6 +90,13 @@ public class Bullet extends Entity {
             if (unit.getGame().getLevel().getEagle().getX() == x && unit.getGame().getLevel().getEagle().getY() == y) {
                 System.out.println("eagle die");
                 unit.getGame().getLevel().getEagle().lifeCount();
+<<<<<<< HEAD
+=======
+            }
+            if (unit.getGame().getLevel().getEagle().getX() == x && unit.getGame().getLevel().getEagle().getY() == y) {
+                System.out.println("eagle die");
+                unit.getGame().getLevel().getEagle().lifeCount();
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
             }
         }
 
@@ -102,6 +109,10 @@ public class Bullet extends Entity {
                 System.out.println("Player died");
                 unit.getGame().getPlayer().lifeCount();
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
             if (x - unit.getGame().getLevel().getEagle().getX() <= 5 && x - unit.getGame().getLevel().getEagle().getX() >= 0 && y == unit.getGame().getLevel().getEagle().getY()) {
                 System.out.println("Eagle died");
                 unit.getGame().getLevel().getEagle().lifeCount();
@@ -185,6 +196,11 @@ public class Bullet extends Entity {
                     }
                 }
             }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
         }
 
 

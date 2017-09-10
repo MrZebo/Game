@@ -63,10 +63,19 @@ public class Assets {
     private static BufferedImage buffStar;
     private static BufferedImage buffClock;
     private static BufferedImage buffHelmet;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
     private static BufferedImage cursorYellow;
     private static BufferedImage cursorGreen;
     private static BufferedImage cursorRed;
     private static BufferedImage cursorSilver;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
 
     public static BufferedImage getCursorYellow() {
         return cursorYellow;
@@ -162,6 +171,21 @@ public class Assets {
 
     public static BufferedImage getCursorSilver() {
         return cursorSilver;
+<<<<<<< HEAD
+=======
+    }
+
+    public static BufferedImage getBuffStar() {
+        return buffStar;
+    }
+
+    public static BufferedImage getBuffClock() {
+        return buffClock;
+    }
+
+    public static BufferedImage getBuffHelmet() {
+        return buffHelmet;
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
     }
 
     public static void init() {
@@ -169,12 +193,22 @@ public class Assets {
         buffStar = spriteSheet.getImage(304, 112, 15, 15);
         buffClock = spriteSheet.getImage(272, 112, 15, 15);
         buffHelmet = spriteSheet.getImage(256, 112, 15, 15);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
         enemyPicture = spriteSheet.getImage(320, 192, 9, 8);
         spriteSheet = new SpriteSheet(ImageLoader.loadImage("/cursor.png"));
         cursorYellow = spriteSheet.getImage(95, 0, 25, 25);
         cursorSilver = spriteSheet.getImage(224, 0, 25, 25);
         cursorGreen = spriteSheet.getImage(96, 118, 25, 25);
         cursorRed= spriteSheet.getImage(224, 119, 25, 25);
+<<<<<<< HEAD
+=======
+=======
+        enemy = spriteSheet.getImage(320, 192, 9, 8);
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
         spriteSheet = new SpriteSheet(ImageLoader.loadImage("/test.png"));
         wood = spriteSheet.getImage(272, 32, 15, 15);
         gameOver = spriteSheet.getImage(288, 184, 32, 15);

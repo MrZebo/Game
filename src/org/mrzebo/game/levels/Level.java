@@ -10,7 +10,14 @@ import org.mrzebo.game.entities.Entity;
 import org.mrzebo.game.entities.units.AbstractUnit;
 import org.mrzebo.game.entities.units.Enemy;
 import org.mrzebo.game.entities.units.Player;
+<<<<<<< HEAD
 import org.mrzebo.game.gfx.Assets;
+=======
+<<<<<<< HEAD
+import org.mrzebo.game.gfx.Assets;
+=======
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
 
 import java.awt.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -20,6 +27,13 @@ public abstract class Level {
     private Player player;
     private Canvas canvas;
     protected int enemyCount;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    //    protected Enemy[] enemies;
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
     protected Buff buff;
     protected int buffCount;
     protected CopyOnWriteArrayList<Enemy> enemies;
@@ -27,6 +41,16 @@ public abstract class Level {
     protected Game game;
 
     abstract void buffObserver();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+    public Eagle getEagle() {
+        return eagle;
+    }
+>>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
+>>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
 
     public Buff getBuff() {
         return buff;
