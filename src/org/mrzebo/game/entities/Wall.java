@@ -5,10 +5,11 @@ import org.mrzebo.game.gfx.Assets;
 import java.awt.*;
 
 public class Wall extends Entity {
+    private Image image;
 
-    public Wall(Image image, int x, int y, int width, int height) {
-        super(image, x, y, width, height);
-
+    public Wall(int x, int y, int width, int height) {
+        super(x, y, width, height);
+        image = Assets.getFullWall();
     }
 
     @Override
@@ -27,19 +28,24 @@ public class Wall extends Entity {
                 case (1):
                     switch (getDirection()) {
                         case UP:
-                            setImage(Assets.getUpHalfWall());
+//                            setImage(Assets.getUpHalfWall());
+                            image = Assets.getUpHalfWall();
                             g.drawImage(image, x, y, null);
                             break;
                         case DOWN:
-                            setImage(Assets.getDownHalfWall());
+//                            setImage(Assets.getDownHalfWall());
+                            image = Assets.getDownHalfWall();
                             g.drawImage(image, x, y + 8, null);
                             break;
                         case RIGHT:
-                            setImage(Assets.getRightHalfWall());
-                            g.drawImage(image, x, y, null);
+//                            setImage(Assets.getRightHalfWall());
+//                            setImage(Assets.getLeftHalfWall());
+                            image = Assets.getRightHalfWall();
+                            g.drawImage(image, x + 8, y, null);
                             break;
                         case LEFT:
-                            setImage(Assets.getLeftHalfWall());
+//                            setImage(Assets.getLeftHalfWall());
+                            image = Assets.getLeftHalfWall();
                             g.drawImage(image, x, y, null);
                             break;
                     }

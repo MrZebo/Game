@@ -10,25 +10,32 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class AbstractUnit extends Entity {
 
-    public static final int DEFAULT_HEALTH = 10;
-    public static final float DEFAULT_SPEED = 3.0f;
-    public static final int DEFAULT_CREATURE_WIDTH = 15,
-            DEFAULT_CREATURE_HEIGHT = 15;
     protected CopyOnWriteArrayList<Bullet> bullets;
-    protected int health;
-    protected float speed;
     protected int xMove, yMove;
     protected Game game;
+    protected boolean modelRender = true;
+    int unitLevel = 1;
+    int speed = 1;
+    Image upFirst;
+    Image upSecond;
+    Image downFirst;
+    Image downSecond;
+    Image leftFirst;
+    Image leftSecond;
+    Image rightFirst;
+    Image rightSecond;
+
+    public int getSpeed() {
+        return speed;
+    }
 
     public void setBullets(CopyOnWriteArrayList<Bullet> bullets) {
         this.bullets = bullets;
     }
 
-    public AbstractUnit(Game game, Image image, int x, int y, int width, int height) {
-        super(image, x, y, width, height);
+    public AbstractUnit(Game game, int x, int y, int width, int height) {
+        super(x, y, width, height);
         this.game = game;
-        health = DEFAULT_HEALTH;
-        speed = DEFAULT_SPEED;
         xMove = 0;
         yMove = 0;
     }
@@ -40,7 +47,15 @@ public abstract class AbstractUnit extends Entity {
         yMove = 0;
     }
 
-    //GETTERS SETTERS
+    public abstract void levelObserver(boolean change);
+
+    public void modelRender() {
+        if (modelRender) {
+            modelRender = false;
+        } else {
+            modelRender = true;
+        }
+    }
 
     public Game getGame() {
         return game;
@@ -66,20 +81,6 @@ public abstract class AbstractUnit extends Entity {
         this.yMove = yMove;
     }
 
-    public int getHealth() {
-        return health;
-    }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public float getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(float speed) {
-        this.speed = speed;
-    }
 
 }

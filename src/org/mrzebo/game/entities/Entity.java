@@ -8,19 +8,25 @@ public abstract class Entity {
 
     protected int x, y;
     protected int width, height;
-    protected Image image;
     protected boolean isNotShot;
     protected DIRECTION direction;
     protected int life = 2;
 
-    public Entity(Image image, int x, int y, int width, int height) {
-        this.image = image;
+    public Entity( int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
         isNotShot = true;
     }
+//    public Entity(Image image, int x, int y, int width, int height) {
+//        this.image = image;
+//        this.x = x;
+//        this.y = y;
+//        this.width = width;
+//        this.height = height;
+//        isNotShot = true;
+//    }
 
     public DIRECTION getDirection() {
         return direction;
@@ -46,9 +52,9 @@ public abstract class Entity {
         isNotShot = notShot;
     }
 
-    public void setImage(Image image) {
-        this.image = image;
-    }
+//    public void setImage(Image image) {
+//        this.image = image;
+//    }
 
     public abstract void tick();
 
@@ -66,9 +72,9 @@ public abstract class Entity {
         return y;
     }
 
-    public Image getImage() {
-        return image;
-    }
+//    public Image getImage() {
+//        return image;
+//    }
 
     public void setY(int y) {
         this.y = y;

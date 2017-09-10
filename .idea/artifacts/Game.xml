@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact name="Game">
-    <output-path>$PROJECT_DIR$/out/artifacts/Game</output-path>
-    <root id="root">
-      <element id="module-output" name="Game" />
-    </root>
-  </artifact>
-</component>
