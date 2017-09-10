@@ -123,15 +123,7 @@ public class Game implements Runnable {
         g.setColor(Color.BLACK);
         g.fillRect(15, 15, blackRectWidth, blackRectHeight);
         g.drawImage(Assets.getGameOver(), blackRectWidth / 2, blackRectHeight / 2, null);
-<<<<<<< HEAD
 //        bs.show();
-=======
-<<<<<<< HEAD
-//        bs.show();
-=======
-        bs.show();
->>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
->>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
         g.dispose();
         running = false;
     }
@@ -141,10 +133,6 @@ public class Game implements Runnable {
         if (bs == null) {
             display.getCanvas().createBufferStrategy(3);
             return;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
         }
         if (statement == STATEMENT.START_MENU) {
             g = bs.getDrawGraphics();
@@ -170,27 +158,7 @@ public class Game implements Runnable {
             }
             bs.show();
             g.dispose();
-<<<<<<< HEAD
         }
-=======
-        }
-=======
-        }
-        g = bs.getDrawGraphics();
-        g.clearRect(0, 0, width, height);
-        g.setColor(Color.GRAY);
-        g.fillRect(0, 0, width, height);
-        g.setColor(Color.BLACK);
-        g.fillRect(15, 15, blackRectWidth, blackRectHeight);
-        player.render(g);
-        level.render(g);
-        if (level.getEagle().getLife() <= 0 || player.getLife() <= 0) {
-            gameOver(g);
-        }
-        bs.show();
-        g.dispose();
->>>>>>> 1e8deff8eaf29f385201ee220f73d6c83dc21281
->>>>>>> 5088eeef8d6b4cf3d0efa6820fca2c5aaa946123
 
     }
 
