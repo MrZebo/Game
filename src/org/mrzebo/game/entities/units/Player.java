@@ -12,6 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Player extends AbstractUnit {
     private Game game;
+
     int score;
 
 
@@ -20,12 +21,20 @@ public class Player extends AbstractUnit {
     }
 
 
-    public Player(Game game, Image image, int x, int y) {
-        super(game, image, x, y, AbstractUnit.DEFAULT_CREATURE_WIDTH, AbstractUnit.DEFAULT_CREATURE_HEIGHT);
+    public Player(Game game, int x, int y) {
+        super(game, x, y, 15, 15);
         this.game = game;
         bullets = new CopyOnWriteArrayList<>();
         direction = DIRECTION.UP;
-//        new BulletHandler().start();
+        life = 1;
+        upFirst = Assets.getPlayerUpFirst();
+        upSecond = Assets.getPlayerUpSecond();
+        downFirst = Assets.getPlayerDownFirst();
+        downSecond = Assets.getPlayerDownSecond();
+        leftFirst = Assets.getPlayerLeftFirst();
+        leftSecond = Assets.getPlayerLeftSecond();
+        rightFirst = Assets.getPlayerRightFirst();
+        rightSecond = Assets.getPlayerRightSecond();
     }
 
     @Override
@@ -39,6 +48,11 @@ public class Player extends AbstractUnit {
     }
 
 
+    @Override
+    public void levelObserver(boolean change) {
+
+    }
+
     public Game getGame() {
         return game;
     }
@@ -47,16 +61,32 @@ public class Player extends AbstractUnit {
     public void render(Graphics g) {
         switch (direction) {
             case UP:
-                g.drawImage(Assets.getPlayerUp(), x, y, width, height, null);
+                if (modelRender) {
+                    g.drawImage(Assets.getPlayerUpFirst(), x, y, width, height, null);
+                } else {
+                    g.drawImage(Assets.getPlayerUpSecond(), x, y, width, height, null);
+                }
                 break;
             case DOWN:
-                g.drawImage(Assets.getPlayerDown(), x, y, width, height, null);
+                if (modelRender) {
+                    g.drawImage(Assets.getPlayerDownFirst(), x, y, width, height, null);
+                } else {
+                    g.drawImage(Assets.getPlayerDownSecond(), x, y, width, height, null);
+                }
                 break;
             case RIGHT:
-                g.drawImage(Assets.getPlayerRight(), x, y, width, height, null);
+                if (modelRender) {
+                    g.drawImage(Assets.getPlayerRightFirst(), x, y, width, height, null);
+                } else {
+                    g.drawImage(Assets.getPlayerRightSecond(), x, y, width, height, null);
+                }
                 break;
             case LEFT:
-                g.drawImage(Assets.getPlayerLeft(), x, y, width, height, null);
+                if (modelRender) {
+                    g.drawImage(Assets.getPlayerLeftFirst(), x, y, width, height, null);
+                } else {
+                    g.drawImage(Assets.getPlayerLeftSecond(), x, y, width, height, null);
+                }
                 break;
         }
         if (!bullets.isEmpty()) {
@@ -64,28 +94,7 @@ public class Player extends AbstractUnit {
                 bullet.render(g);
             }
         }
+
     }
 
-//    class BulletHandler extends Thread {
-//        @Override
-//        public void run() {
-//            Enemy[] enemies = getGame().getLevel().getEnemies();
-//            while (isNotShot) {
-//                for (Enemy enemy : getGame().getLevel().getEnemies()) {
-//                    for (Bullet bullet : bullets) {
-////                        System.out.println(bullet.getX() + "bullet" + bullet.getY());
-//                        if (bullet.getX() == enemy.getX() && bullet.getY() == enemy.getY()) {
-//
-//                            enemy.setNotShot(false);
-//                        }
-//                    }
-//
-//                }
-//                for (int i = 0; i < enemies.length; i++) {
-//
-//                    System.out.println(enemies[i].getX() + " enemy" + i + " " + enemies[i].getY());
-//                }
-//            }
-//        }
-//    }
 }

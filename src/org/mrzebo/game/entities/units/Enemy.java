@@ -16,12 +16,22 @@ public class Enemy extends AbstractUnit {
     private Level level;
     private Player player;
 
-    public Enemy(Game game, Level level, Image image, int x, int y, int width, int height) {
-        super(game, image, x, y, width, height);
+
+    public Enemy(Game game, Level level, int x, int y, int width, int height) {
+        super(game, x, y, width, height);
         direction = DIRECTION.DOWN;
+        life = 1;
         this.level = level;
         player = level.getPlayer();
         bullets = new CopyOnWriteArrayList<>();
+        upFirst = Assets.getEnemy1UpFirst();
+        upSecond = Assets.getEnemy1UpSecond();
+        downFirst = Assets.getEnemy1DownFirst();
+        downSecond = Assets.getEnemy1DownSecond();
+        leftFirst = Assets.getEnemy1LeftFirst();
+        leftSecond = Assets.getEnemy1LeftSecond();
+        rightFirst = Assets.getEnemy1RightFirst();
+        rightSecond = Assets.getEnemy1RightSecond();
     }
 
     private boolean frequency() {
@@ -40,74 +50,66 @@ public class Enemy extends AbstractUnit {
 
     @Override
     public void tick() {
-        int a = level.getGame().move(this);
+        int step = this.getSpeed();
         if (isNotShot) {
             if (level.movable(this, direction)) {
                 switch (direction) {
                     case LEFT:
                         setDirection(DIRECTION.LEFT);
-                        setxMove(-a);
+                        setxMove(-step);
                         if (player.getX() < getX() && player.getY() == getY() && frequency()) {
-                            bullets.add(new Bullet(this, Assets.getBulletLeft(), x, y, 10, 10));
+                            bullets.add(new Bullet(this, x, y, 10, 10));
                         }
                         if (level.getEagle().getX() < getX() && level.getEagle().getY() == getY() && frequency()) {
-                            bullets.add(new Bullet(this, Assets.getBulletLeft(), x, y, 10, 10));
+                            bullets.add(new Bullet(this, x, y, 10, 10));
                         }
+                        modelRender();
                         break;
                     case RIGHT:
                         setDirection(DIRECTION.RIGHT);
-                        setxMove(a);
+                        setxMove(step);
                         if (player.getX() > getX() && player.getY() == getY() && frequency()) {
-                            bullets.add(new Bullet(this, Assets.getBulletRight(), x, y, 10, 10));
+                            bullets.add(new Bullet(this, x, y, 10, 10));
 
                         }
                         if (level.getEagle().getX() > getX() && level.getEagle().getY() == getY() && frequency()) {
-                            bullets.add(new Bullet(this, Assets.getBulletRight(), x, y, 10, 10));
+                            bullets.add(new Bullet(this, x, y, 10, 10));
                         }
+                        modelRender();
                         break;
                     case UP:
                         setDirection(DIRECTION.UP);
-                        setyMove(-a);
+                        setyMove(-step);
                         if (player.getX() == getX() && player.getY() < getY() && frequency()) {
-                            bullets.add(new Bullet(this, Assets.getBulletUp(), x, y, 10, 10));
+                            bullets.add(new Bullet(this, x, y, 10, 10));
 
                         }
                         if (level.getEagle().getX() == getX() && level.getEagle().getY() < getY() && frequency()) {
-                            bullets.add(new Bullet(this, Assets.getBulletUp(), x, y, 10, 10));
+                            bullets.add(new Bullet(this, x, y, 10, 10));
                         }
+                        modelRender();
                         break;
                     case DOWN:
                         setDirection(DIRECTION.DOWN);
-                        setyMove(a);
+                        setyMove(step);
                         if (player.getX() == getX() && player.getY() > getY() && frequency()) {
-                            bullets.add(new Bullet(this, Assets.getBulletDown(), x, y, 10, 10));
+                            bullets.add(new Bullet(this, x, y, 10, 10));
 
                         }
                         if (level.getEagle().getX() == getX() && level.getEagle().getY() > getY() && frequency()) {
-                            bullets.add(new Bullet(this, Assets.getBulletDown(), x, y, 10, 10));
+                            bullets.add(new Bullet(this, x, y, 10, 10));
                         }
+                        modelRender();
                         break;
                 }
             } else {
                 int b = (int) (Math.random() * 4);
                 setDirection(DIRECTION.values()[b]);
-                Image assets = null;
-                switch (b) {
-                    case 0:
-                        assets = Assets.getBulletUp();
-                        break;
-                    case 1:
-                        assets = Assets.getBulletDown();
-                        break;
-                    case 2:
-                        assets = Assets.getBulletRight();
-                        break;
-                    case 3:
-                        assets = Assets.getBulletLeft();
-                        break;
-
+                bullets.add(new Bullet(this, x, y, 10, 10));
+                if (unitLevel == 3) {
+                    setDirection(DIRECTION.values()[b]);
+                    bullets.add(new Bullet(this, x, y, 10, 10));
                 }
-                bullets.add(new Bullet(this, assets, x, y, 10, 10));
             }
             move();
             if (!bullets.isEmpty()) {
@@ -124,16 +126,32 @@ public class Enemy extends AbstractUnit {
         if (isNotShot) {
             switch (direction) {
                 case UP:
-                    g.drawImage(Assets.getEnemyUp(), x, y, null);
+                    if (modelRender) {
+                        g.drawImage(upFirst, x, y, null);
+                    } else {
+                        g.drawImage(upSecond, x, y, null);
+                    }
                     break;
                 case DOWN:
-                    g.drawImage(Assets.getEnemyDown(), x, y, null);
+                    if (modelRender) {
+                        g.drawImage(downFirst, x, y, null);
+                    } else {
+                        g.drawImage(downSecond, x, y, null);
+                    }
                     break;
                 case LEFT:
-                    g.drawImage(Assets.getEnemyLeft(), x, y, null);
+                    if (modelRender) {
+                        g.drawImage(leftFirst, x, y, null);
+                    } else {
+                        g.drawImage(leftSecond, x, y, null);
+                    }
                     break;
                 case RIGHT:
-                    g.drawImage(Assets.getEnemyRight(), x, y, null);
+                    if (modelRender) {
+                        g.drawImage(rightFirst, x, y, null);
+                    } else {
+                        g.drawImage(rightSecond, x, y, null);
+                    }
                     break;
             }
         }
@@ -144,6 +162,63 @@ public class Enemy extends AbstractUnit {
             for (Bullet bullet : bullets) {
                 bullet.render(g);
             }
+        }
+    }
+
+    @Override
+    public void levelObserver(boolean change) {
+        if (change) {
+            unitLevel++;
+        } else {
+            unitLevel--;
+        }
+        switch (unitLevel) {
+            case 1:
+                upFirst = Assets.getEnemy1UpFirst();
+                upSecond = Assets.getEnemy1UpSecond();
+                downFirst = Assets.getEnemy1DownFirst();
+                downSecond = Assets.getEnemy1DownSecond();
+                leftFirst = Assets.getEnemy1LeftFirst();
+                leftSecond = Assets.getEnemy1LeftSecond();
+                rightFirst = Assets.getEnemy1RightFirst();
+                rightSecond = Assets.getEnemy1RightSecond();
+
+                break;
+            case 2:
+//                speed = 2;
+                life = 2;
+                upFirst = Assets.getEnemy2UpFirst();
+                upSecond = Assets.getEnemy2UpSecond();
+                downFirst = Assets.getEnemy2DownFirst();
+                downSecond = Assets.getEnemy2DownSecond();
+                leftFirst = Assets.getEnemy2LeftFirst();
+                leftSecond = Assets.getEnemy2LeftSecond();
+                rightFirst = Assets.getEnemy2RightFirst();
+                rightSecond = Assets.getEnemy2RightSecond();
+                break;
+            case 3:
+//                speed = 1;
+                upFirst = Assets.getEnemy3UpFirst();
+                upSecond = Assets.getEnemy3UpSecond();
+                downFirst = Assets.getEnemy3DownFirst();
+                downSecond = Assets.getEnemy3DownSecond();
+                leftFirst = Assets.getEnemy3LeftFirst();
+                leftSecond = Assets.getEnemy3LeftSecond();
+                rightFirst = Assets.getEnemy3RightFirst();
+                rightSecond = Assets.getEnemy3RightSecond();
+                break;
+            case 4:
+                life = 2;
+//                speed = 3;
+                upFirst = Assets.getEnemy4UpFirst();
+                upSecond = Assets.getEnemy4UpSecond();
+                downFirst = Assets.getEnemy4DownFirst();
+                downSecond = Assets.getEnemy4DownSecond();
+                leftFirst = Assets.getEnemy4LeftFirst();
+                leftSecond = Assets.getEnemy4LeftSecond();
+                rightFirst = Assets.getEnemy4RightFirst();
+                rightSecond = Assets.getEnemy4RightSecond();
+                break;
         }
     }
 }
